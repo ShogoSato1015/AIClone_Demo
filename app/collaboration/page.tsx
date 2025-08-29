@@ -9,7 +9,7 @@ import AnimatedCard from "@/components/ui/AnimatedCard";
 import CloneAvatar from "@/components/ui/CloneAvatar";
 import CircularProgress from "@/components/ui/CircularProgress";
 import LoadingAnimation from "@/components/ui/LoadingAnimation";
-import { Work } from "@/types";
+import { Work, Theme } from "@/types";
 import { dailyThemes } from "@/data/mockData";
 
 type CollaborationPhase = "selection" | "preparation" | "creation" | "result";
@@ -108,7 +108,7 @@ export default function CollaborationPage() {
     // Generate final work
     const newWork: Work = {
       workId: `collab_${Date.now()}`,
-      theme: todayTheme.theme,
+      theme: todayTheme.theme as Theme,
       pairingId: `pair_${selectedPartner?.id}_${Date.now()}`,
       ...(todayTheme.theme === "漫才" ? {
         script: generateCollaborativeManzai(selectedPartner!.style)
@@ -201,7 +201,7 @@ export default function CollaborationPage() {
                     key={partner.id}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    delay={index * 0.1}
+                    transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="bg-gradient-to-br from-white/80 to-gray-50/80 border-2 border-gray-200/50 rounded-2xl p-4 cursor-pointer hover:shadow-lg transition-all"

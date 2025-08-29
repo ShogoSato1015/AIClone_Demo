@@ -237,7 +237,7 @@ export default function ChatPage() {
                         <div key={participant.id} className="relative">
                           <CloneAvatar 
                             look={participant.look} 
-                            size="xs" 
+                            size="sm" 
                             className="border-2 border-white shadow-md"
                           />
                           {i === 3 && room.participants.length > 4 && (

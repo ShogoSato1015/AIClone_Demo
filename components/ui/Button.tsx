@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 
 interface ButtonProps {
   children: ReactNode;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent) => void;
   variant?: "primary" | "secondary" | "accent" | "outline";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;

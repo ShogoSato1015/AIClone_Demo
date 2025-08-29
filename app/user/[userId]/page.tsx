@@ -374,7 +374,7 @@ export default function UserProfilePage() {
                         {work.collaboratorName && (
                           <div className="flex items-center space-x-2 text-sm text-gray-600">
                             <span>with</span>
-                            <CloneAvatar look={work.collaboratorLook} size="xs" />
+                            <CloneAvatar look={work.collaboratorLook} size="sm" />
                             <span className="font-medium">{work.collaboratorName}</span>
                           </div>
                         )}
@@ -423,7 +423,7 @@ export default function UserProfilePage() {
                         </div>
                         <Button
                           onClick={(e) => {
-                            e.stopPropagation();
+                            e?.stopPropagation();
                             router.push(`/collaboration?partner=${collaborator.userId}`);
                           }}
                           variant="outline"

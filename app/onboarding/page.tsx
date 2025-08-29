@@ -105,7 +105,7 @@ export default function OnboardingPage() {
                 className="bg-gradient-to-br from-blue-100/90 to-cyan-100/90 backdrop-blur-sm border-2 border-blue-200/50 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                delay={0.1}
+                transition={{ delay: 0.1 }}
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div 
@@ -122,7 +122,7 @@ export default function OnboardingPage() {
                 className="bg-gradient-to-br from-purple-100/90 to-violet-100/90 backdrop-blur-sm border-2 border-purple-200/50 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                delay={0.2}
+                transition={{ delay: 0.2 }}
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div 
@@ -139,7 +139,7 @@ export default function OnboardingPage() {
                 className="bg-gradient-to-br from-pink-100/90 to-rose-100/90 backdrop-blur-sm border-2 border-pink-200/50 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                delay={0.3}
+                transition={{ delay: 0.3 }}
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.div 

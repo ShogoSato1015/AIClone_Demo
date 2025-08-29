@@ -8,7 +8,7 @@ import Button from "@/components/ui/Button";
 import AnimatedCard from "@/components/ui/AnimatedCard";
 import CloneAvatar from "@/components/ui/CloneAvatar";
 import LoadingAnimation from "@/components/ui/LoadingAnimation";
-import { Work } from "@/types";
+import { Work, Theme } from "@/types";
 import { dailyThemes } from "@/data/mockData";
 
 export default function GeneratePage() {
@@ -33,7 +33,7 @@ export default function GeneratePage() {
     // Generate mock work based on theme
     const newWork: Work = {
       workId: `work_${Date.now()}`,
-      theme: todayTheme.theme,
+      theme: todayTheme.theme as Theme,
       pairingId: `pair_${Date.now()}`,
       ...(todayTheme.theme === "漫才" ? {
         script: generateMockManzai(todayTheme.title)

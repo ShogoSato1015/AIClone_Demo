@@ -211,7 +211,7 @@ const PrivateChat: React.FC<PrivateChatProps> = ({
                   className={`flex ${isCurrentUser ? 'justify-end' : 'justify-start'} items-end space-x-2`}
                 >
                   {!isCurrentUser && showAvatar && (
-                    <CloneAvatar look={message.senderLook} size="xs" />
+                    <CloneAvatar look={message.senderLook} size="sm" />
                   )}
                   {!isCurrentUser && !showAvatar && (
                     <div className="w-8 h-8"></div>
@@ -244,7 +244,7 @@ const PrivateChat: React.FC<PrivateChatProps> = ({
                   </div>
                   
                   {isCurrentUser && showAvatar && (
-                    <CloneAvatar look={message.senderLook} size="xs" />
+                    <CloneAvatar look={message.senderLook} size="sm" />
                   )}
                   {isCurrentUser && !showAvatar && (
                     <div className="w-8 h-8"></div>
@@ -262,7 +262,7 @@ const PrivateChat: React.FC<PrivateChatProps> = ({
                   exit={{ opacity: 0, y: 10 }}
                   className="flex justify-start items-end space-x-2"
                 >
-                  <CloneAvatar look={otherUser.look} size="xs" />
+                  <CloneAvatar look={otherUser.look} size="sm" />
                   <div className="bg-white border border-purple-200 rounded-2xl px-4 py-2 shadow-sm">
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>

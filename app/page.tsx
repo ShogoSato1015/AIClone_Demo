@@ -68,7 +68,7 @@ export default function LandingPage() {
             className="bg-gradient-to-br from-rose-100/90 to-pink-100/90 backdrop-blur-sm border-2 border-rose-200/50 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            delay={0.1}
+            transition={{ delay: 0.1 }}
             whileHover={{ scale: 1.02 }}
           >
             <div className="text-center space-y-3">
@@ -92,7 +92,7 @@ export default function LandingPage() {
             className="bg-gradient-to-br from-violet-100/90 to-purple-100/90 backdrop-blur-sm border-2 border-violet-200/50 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            delay={0.2}
+            transition={{ delay: 0.2 }}
             whileHover={{ scale: 1.02 }}
           >
             <div className="text-center space-y-3">
@@ -116,7 +116,7 @@ export default function LandingPage() {
             className="bg-gradient-to-br from-emerald-100/90 to-teal-100/90 backdrop-blur-sm border-2 border-emerald-200/50 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            delay={0.3}
+            transition={{ delay: 0.3 }}
             whileHover={{ scale: 1.02 }}
           >
             <div className="text-center space-y-3">

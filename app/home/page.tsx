@@ -189,7 +189,7 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            delay={0.2}
+            transition={{ delay: 0.2 }}
             className="text-center space-y-4 cursor-pointer"
             onClick={() => router.push(`/theme-works?theme=${todayTheme.theme}`)}
             whileHover={{ scale: 1.02 }}
@@ -215,7 +215,7 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              delay={0.3}
+              transition={{ delay: 0.3 }}
               className="space-y-4"
             >
               <h3 className="text-xl font-semibold text-indigo-800">クローンの状態</h3>
@@ -271,7 +271,7 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              delay={0.4}
+              transition={{ delay: 0.4 }}
               className="space-y-4"
             >
               <div className="flex items-center justify-between">
@@ -299,7 +299,7 @@ export default function HomePage() {
                       key={work.workId}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      delay={0.5 + index * 0.1}
+                      transition={{ delay: 0.5 + index * 0.1 }}
                       className="flex items-center space-x-3 p-4 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200/50 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer"
                       onClick={handleViewWorks}
                     >
@@ -322,7 +322,7 @@ export default function HomePage() {
 
         {/* Daily Progress */}
         <div className="bg-gradient-to-r from-blue-100/80 to-cyan-100/80 backdrop-blur-sm border-2 border-blue-200/50 rounded-3xl p-6 shadow-lg">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} delay={0.5} className="space-y-4">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-xl font-semibold text-blue-800">デイリークエスト進捗</h3>
               <span className="px-3 py-1 bg-blue-200/50 text-blue-700 rounded-full text-sm font-medium">
@@ -351,7 +351,7 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            delay={0.6}
+            transition={{ delay: 0.6 }}
             whileHover={{ scale: 1.02 }}
             className={`bg-gradient-to-br from-rose-100/90 to-pink-100/90 backdrop-blur-sm border-2 border-rose-200/50 rounded-3xl p-6 shadow-lg transition-all ${
               todaysProgress.qaCompleted >= 3 ? 'opacity-60' : 'cursor-pointer hover:shadow-xl'
@@ -393,7 +393,7 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            delay={0.7}
+            transition={{ delay: 0.7 }}
             whileHover={{ scale: 1.02 }}
             className={`bg-gradient-to-br from-violet-100/90 to-purple-100/90 backdrop-blur-sm border-2 border-violet-200/50 rounded-3xl p-6 shadow-lg transition-all ${
               todaysProgress.minigameCompleted ? 'opacity-60' : 'cursor-pointer hover:shadow-xl'
@@ -431,7 +431,7 @@ export default function HomePage() {
 
         {/* AI Clone Collaboration Section */}
         <div className="bg-gradient-to-br from-cyan-100/90 to-blue-100/90 backdrop-blur-sm border-2 border-cyan-200/50 rounded-3xl p-8 shadow-lg">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} delay={0.8} className="space-y-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="space-y-6">
             <div className="text-center space-y-2">
               <div className="text-4xl mb-2">🤝</div>
               <h3 className="text-2xl font-bold text-cyan-800">AIクローン同士のコラボレーション</h3>
@@ -447,7 +447,7 @@ export default function HomePage() {
                     key={partner.id}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    delay={1 + index * 0.1}
+                    transition={{ delay: 1 + index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
                     className="flex items-center space-x-4 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200/50 rounded-2xl cursor-pointer hover:shadow-md transition-all"
                     onClick={handleStartCollaboration}
