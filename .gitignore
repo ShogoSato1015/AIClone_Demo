@@ -1,0 +1,24 @@
+# Node
+node_modules/
+
+# Build/Cache
+dist/
+build/
+out/
+.next/
+.esbuild/
+.vite/
+*.tsbuildinfo
+coverage/
+.nyc_output/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

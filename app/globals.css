@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-blue-50 via-white to-pink-50 min-h-screen;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-2xl font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600 text-white shadow-lg hover:shadow-xl;
+  }
+  
+  .card {
+    @apply bg-white/70 backdrop-blur-sm border border-white/50 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .card-glow {
+    @apply relative overflow-hidden;
+  }
+  
+  .card-glow::before {
+    @apply absolute inset-0 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 opacity-0 transition-opacity duration-300;
+    content: '';
+  }
+  
+  .card-glow:hover::before {
+    @apply opacity-100;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+  
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  .glass {
+    @apply bg-white/20 backdrop-blur-lg border border-white/30;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #60a5fa;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
