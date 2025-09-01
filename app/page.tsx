@@ -223,20 +223,7 @@ export default function LandingPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2 }}
-            >
-              <div className="flex items-center space-x-2 text-indigo-700">
-                <span>⚡</span>
-                <span>30秒セットアップ</span>
-              </div>
-              <div className="flex items-center space-x-2 text-purple-700">
-                <span>🆓</span>
-                <span>無料デモ</span>
-              </div>
-              <div className="flex items-center space-x-2 text-pink-700">
-                <span>🎨</span>
-                <span>即座に創作開始</span>
-              </div>
-            </motion.div>
+            ></motion.div>
           </div>
         </motion.div>
       </div>
