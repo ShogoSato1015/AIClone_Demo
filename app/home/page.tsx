@@ -134,11 +134,14 @@ export default function HomePage() {
           <div className="relative z-10 flex items-center justify-between">
             <div className="flex-1 space-y-4">
               <motion.h1
-                className="text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent"
+                className="text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent cursor-pointer"
+                onClick={() => router.push('/character-customization')}
                 animate={{
                   backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
                 }}
                 transition={{ duration: 5, repeat: Infinity }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {user.nickname}さんのAicon
               </motion.h1>
@@ -159,6 +162,8 @@ export default function HomePage() {
             <div className="relative">
               {/* Main Clone Avatar with Animation */}
               <motion.div
+                onClick={() => router.push('/character-customization')}
+                className="cursor-pointer"
                 animate={{
                   y: [0, -8, 0],
                   rotate: [0, 2, -2, 0]
@@ -168,6 +173,8 @@ export default function HomePage() {
                   repeat: Infinity,
                   ease: 'easeInOut'
                 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <CloneAvatar look={clone?.look || {}} size="xl" showDetails />
               </motion.div>
