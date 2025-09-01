@@ -97,6 +97,77 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-100 via-pink-50 to-cyan-100 px-4 py-8">
       <div className="max-w-5xl mx-auto space-y-8">
+        {/* Celebrity Collaboration Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative overflow-hidden bg-gradient-to-r from-yellow-400/90 via-orange-400/90 to-red-400/90 backdrop-blur-sm border-2 border-yellow-300 rounded-3xl p-6 shadow-xl cursor-pointer"
+          onClick={() => router.push('/collaboration')}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          {/* Animated background elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(12)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-8 h-8 opacity-30"
+                style={{
+                  left: `${5 + i * 8}%`,
+                  top: `${10 + (i % 3) * 30}%`,
+                }}
+                animate={{
+                  y: [0, -15, 0],
+                  rotate: [0, 180, 360],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{
+                  duration: 3 + i * 0.2,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+              >
+                {['⭐', '🎭', '🎵', '✨'][i % 4]}
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="relative z-10 text-center space-y-4">
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="text-2xl font-bold text-white"
+            >
+              🌟 有名人コラボ実施中！！ 🌟
+            </motion.div>
+            
+            <div className="flex items-center justify-center space-x-4">
+              <div className="text-white text-lg font-semibold">
+                みなみ・たかし・ゆい・けんじ と特別コラボ！
+              </div>
+            </div>
+            
+            <motion.div
+              animate={{ 
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="inline-block px-6 py-3 bg-gradient-to-r from-white/20 to-yellow-200/30 border-2 border-white/50 text-white font-bold rounded-full"
+            >
+              今すぐ参加する →
+            </motion.div>
+          </div>
+
+          {/* Pulsing border animation */}
+          <motion.div
+            className="absolute inset-0 rounded-3xl border-4 border-yellow-300/50"
+            animate={{ 
+              borderColor: ['rgba(253, 224, 71, 0.5)', 'rgba(251, 191, 36, 0.8)', 'rgba(253, 224, 71, 0.5)']
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </motion.div>
         {/* Hero Section with Clone Motion Movie */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
