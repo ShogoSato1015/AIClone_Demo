@@ -146,17 +146,6 @@ export default function HomePage() {
                 {user.nickname}さんのAicon
               </motion.h1>
               <p className="text-lg text-gray-700">Aiconトレーニングを通じてさらに成長させましょう</p>
-              <div className="flex items-center space-x-4">
-                <div className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                  Lv.{clone?.level || 1}
-                </div>
-                <div className="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-medium">
-                  {clone?.experience || 0} EXP
-                </div>
-                <div className="px-4 py-2 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium">
-                  {clone?.titleBadges.length || 0} バッジ
-                </div>
-              </div>
             </div>
 
             <div className="relative">
