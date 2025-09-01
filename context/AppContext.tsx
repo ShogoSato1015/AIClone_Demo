@@ -17,6 +17,7 @@ const initialState: AppState = {
   },
   works: mockWorks,
   isLoading: false,
+  collaborationPoints: 10, // 初期ポイント
 };
 
 // Action Types
@@ -28,10 +29,12 @@ type AppAction =
   | { type: 'COMPLETE_MINIGAME'; payload: MiniGameLog }
   | { type: 'GENERATE_WORK'; payload: any }
   | { type: 'UPDATE_CLONE_APPEARANCE'; payload: Partial<any> }
-  | { type: 'ADD_EXPERIENCE'; payload: number }
   | { type: 'AWARD_BADGE'; payload: string }
   | { type: 'LIKE_WORK'; payload: string }
-  | { type: 'RESET_DAILY_PROGRESS' };
+  | { type: 'SET_USER'; payload: any }
+  | { type: 'RESET_DAILY_PROGRESS' }
+  | { type: 'ADD_COLLABORATION_POINTS'; payload: number }
+  | { type: 'SPEND_COLLABORATION_POINTS'; payload: number };
 
 // Reducer
 function appReducer(state: AppState, action: AppAction): AppState {
@@ -96,18 +99,6 @@ function appReducer(state: AppState, action: AppAction): AppState {
         }
       };
 
-    case 'ADD_EXPERIENCE':
-      if (!state.clone) return state;
-      const newExp = state.clone.experience + action.payload;
-      const newLevel = Math.floor(newExp / 1000) + 1;
-      return {
-        ...state,
-        clone: {
-          ...state.clone,
-          experience: newExp,
-          level: Math.max(state.clone.level, newLevel)
-        }
-      };
 
     case 'AWARD_BADGE':
       if (!state.clone) return state;
@@ -130,6 +121,9 @@ function appReducer(state: AppState, action: AppAction): AppState {
         )
       };
 
+    case 'SET_USER':
+      return { ...state, user: action.payload };
+
     case 'RESET_DAILY_PROGRESS':
       return {
         ...state,
@@ -138,6 +132,18 @@ function appReducer(state: AppState, action: AppAction): AppState {
           minigameCompleted: false,
           workGenerated: false,
         }
+      };
+
+    case 'ADD_COLLABORATION_POINTS':
+      return {
+        ...state,
+        collaborationPoints: state.collaborationPoints + action.payload
+      };
+
+    case 'SPEND_COLLABORATION_POINTS':
+      return {
+        ...state,
+        collaborationPoints: Math.max(0, state.collaborationPoints - action.payload)
       };
 
     default:
@@ -157,10 +163,12 @@ interface AppContextType {
     completeMinigame: (log: MiniGameLog) => void;
     generateWork: (work: any) => void;
     updateCloneAppearance: (changes: any) => void;
-    addExperience: (exp: number) => void;
     awardBadge: (badge: string) => void;
     likeWork: (workId: string) => void;
+    setUser: (user: any) => void;
     resetDailyProgress: () => void;
+    addCollaborationPoints: (points: number) => void;
+    spendCollaborationPoints: (points: number) => void;
   };
 }
 
@@ -178,10 +186,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
     completeMinigame: (log: MiniGameLog) => dispatch({ type: 'COMPLETE_MINIGAME', payload: log }),
     generateWork: (work: any) => dispatch({ type: 'GENERATE_WORK', payload: work }),
     updateCloneAppearance: (changes: any) => dispatch({ type: 'UPDATE_CLONE_APPEARANCE', payload: changes }),
-    addExperience: (exp: number) => dispatch({ type: 'ADD_EXPERIENCE', payload: exp }),
     awardBadge: (badge: string) => dispatch({ type: 'AWARD_BADGE', payload: badge }),
     likeWork: (workId: string) => dispatch({ type: 'LIKE_WORK', payload: workId }),
+    setUser: (user: any) => dispatch({ type: 'SET_USER', payload: user }),
     resetDailyProgress: () => dispatch({ type: 'RESET_DAILY_PROGRESS' }),
+    addCollaborationPoints: (points: number) => dispatch({ type: 'ADD_COLLABORATION_POINTS', payload: points }),
+    spendCollaborationPoints: (points: number) => dispatch({ type: 'SPEND_COLLABORATION_POINTS', payload: points }),
   };
 
   return (

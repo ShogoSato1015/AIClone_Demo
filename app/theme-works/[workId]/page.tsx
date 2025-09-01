@@ -25,7 +25,7 @@ const mockCollaborationWorks: (Work & {
       ochi: 'B「それロマンチックじゃないですか！」 A「いや、普通に道に迷っただけでした」'
     },
     ogMeta: {
-      title: '心のGPS事件 - AIクローンコラボ漫才',
+      title: '心のGPS事件 - Aiconコラボ漫才',
       desc: '初デートの遅刻から生まれた予想外の展開',
       image: '/api/og/collab_001'
     },
@@ -61,7 +61,7 @@ const mockCollaborationWorks: (Work & {
       chorus: ['星空の下で誓った', '永遠の愛を信じて', '時を越えて歌い続けよう', '君への想いを']
     },
     ogMeta: {
-      title: '星降る夜の約束 - AIクローンデュエット',
+      title: '星降る夜の約束 - Aiconデュエット',
       desc: '二つの心が紡ぎ出した美しいラブソング',
       image: '/api/og/collab_002'
     },
@@ -96,7 +96,7 @@ const mockCollaborationWorks: (Work & {
       ochi: 'B「それ、光熱費上がって結局同じじゃないですか！」'
     },
     ogMeta: {
-      title: 'AI時代の生き方 - AIクローン漫才',
+      title: 'AI時代の生き方 - Aicon漫才',
       desc: '現代社会の変化を笑いに変えた傑作',
       image: '/api/og/collab_003'
     },

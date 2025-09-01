@@ -11,11 +11,11 @@ export default function LandingPage() {
   const { state } = useApp();
 
   const handleGetStarted = () => {
-    // Check if user has completed onboarding
+    // Check if user has completed setup
     if (state.user && state.clone) {
       router.push('/home');
     } else {
-      router.push('/onboarding');
+      router.push('/character-customization');
     }
   };
 
@@ -30,7 +30,7 @@ export default function LandingPage() {
           className="space-y-6"
         >
           <h1 className="text-5xl md:text-7xl font-bold gradient-text leading-tight">
-            AIクローンが
+            Aiconが
             <br />
             創作する世界
           </h1>
@@ -129,7 +129,7 @@ export default function LandingPage() {
               </motion.div>
               <h3 className="text-xl font-bold text-emerald-800">成長体験</h3>
               <p className="text-emerald-700">
-                クローンと一緒に
+                Aiconと一緒に
                 <br />
                 成長する毎日
               </p>
@@ -151,13 +151,13 @@ export default function LandingPage() {
               {
                 step: '02',
                 title: 'ミニゲーム',
-                desc: '楽しくプレイしてクローンを育成',
+                desc: '楽しくプレイしてAiconを育成',
                 icon: '🎮',
                 color: 'from-purple-400 to-purple-600'
               },
               {
                 step: '03',
-                title: 'クローン成長',
+                title: 'Aicon成長',
                 desc: 'あなたの個性を反映',
                 icon: '🌱',
                 color: 'from-green-400 to-green-600'

@@ -1,6 +1,6 @@
 // Core Types
 export type PersonaTag = "共感" | "論理" | "冒険" | "保守" | "ユーモア" | "ロマン";
-export type Theme = "漫才" | "ラブソング";
+export type Theme = "漫才" | "ラブソング" | "アイドルソング";
 export type GameType = "drama" | "rhythm";
 
 // User and Persona Types
@@ -162,6 +162,7 @@ export interface AppState {
   };
   works: Work[];
   isLoading: boolean;
+  collaborationPoints: number;
 }
 
 // UI Component Types

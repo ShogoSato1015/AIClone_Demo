@@ -29,7 +29,7 @@ export const mockClone: CloneProfile = {
   ownerId: 'user_001',
   personaSnapshot: mockPersona,
   look: {
-    hair: 'AIクローン名',
+    hair: 'Aicon名',
     eye: 'クール',
     acc: '丸メガネ',
     mood: 'にっこり',
@@ -105,7 +105,7 @@ export const mockWorks: Work[] = [
       ochi: 'B「え？！それ一人で完璧にしただけじゃないですか！」'
     },
     ogMeta: {
-      title: '初デートの完璧な準備 - AIクローン漫才',
+      title: '初デートの完璧な準備 - Aicon漫才',
       desc: '完璧すぎる準備が生んだ予想外のオチ！',
       image: '/api/og/work_001'
     },
@@ -126,7 +126,7 @@ export const mockWorks: Work[] = [
       chorus: ['傘一つで寄り添って', '歩いた道を今も', '心の中で歌ってる', '君への愛を']
     },
     ogMeta: {
-      title: '雨音の約束 - AIクローンデュエット',
+      title: '雨音の約束 - Aiconデュエット',
       desc: '雨の日の思い出を歌った心温まるラブソング',
       image: '/api/og/work_002'
     },
@@ -202,4 +202,92 @@ export const availableBadges = [
   'クリエイター',
   '人気者',
   'バイラルスター'
+];
+
+// Celebrity collaboration data
+export const celebrities = [
+  {
+    id: 'celebrity_001',
+    name: 'みなみ',
+    profession: 'アイドル',
+    style: 'キュート&エネルギッシュ',
+    look: { 
+      hair: 'ツインテール', 
+      eye: 'キラキラした瞳', 
+      mood: '元気いっぱい', 
+      style: 'アイドル衣装' 
+    },
+    specialty: ['歌とダンス', 'ファンとの交流', 'ポジティブエネルギー'],
+    description: '明るくて元気なアイドル。ファンのみんなと一緒に楽しい作品を作りたい！',
+    collaborationThemes: [
+      {
+        theme: 'アイドルソング' as const,
+        title: 'キラキラ☆ドリーム',
+        description: 'みんなの夢を応援する元気な楽曲を一緒に作ろう！'
+      }
+    ]
+  },
+  {
+    id: 'celebrity_002', 
+    name: 'たかし',
+    profession: 'お笑い芸人',
+    style: 'ベテラン芸人',
+    look: {
+      hair: '坊主頭',
+      eye: '優しい目',
+      mood: 'ユーモラス',
+      style: 'カジュアル'
+    },
+    specialty: ['漫才', 'コント', '間の取り方'],
+    description: '長年の経験を活かした笑いのプロ。一緒に最高の漫才を作りましょう！',
+    collaborationThemes: [
+      {
+        theme: '漫才' as const,
+        title: 'プロ直伝！爆笑漫才',
+        description: 'ベテラン芸人との本格的な漫才コラボレーション'
+      }
+    ]
+  },
+  {
+    id: 'celebrity_003',
+    name: 'ゆい',
+    profession: 'シンガーソングライター', 
+    style: 'エモーショナル',
+    look: {
+      hair: '黒髪ロング',
+      eye: '深い瞳',
+      mood: '感情的',
+      style: 'アーティスティック'
+    },
+    specialty: ['作詞作曲', '感情表現', 'メロディメイク'],
+    description: '心に響く楽曲作りが得意。あなたの想いを歌に込めましょう。',
+    collaborationThemes: [
+      {
+        theme: 'ラブソング' as const,
+        title: '心をつなぐメロディ',
+        description: '深い感情を込めた特別なラブソングを共作しよう'
+      }
+    ]
+  },
+  {
+    id: 'celebrity_004',
+    name: 'けんじ',
+    profession: 'コメディアン',
+    style: 'バラエティ番組の人気者',
+    look: {
+      hair: 'パーマヘア',
+      eye: 'いたずらっぽい目',
+      mood: 'ノリノリ',
+      style: 'カラフル'
+    },
+    specialty: ['一発ギャグ', 'アドリブ', '場を盛り上げる'],
+    description: 'テレビで大人気！一緒に視聴者を笑わせる企画を考えよう！',
+    collaborationThemes: [
+      {
+        theme: '漫才' as const,
+        title: 'バラエティ風コント',
+        description: 'テレビ番組みたいな面白いコントを一緒に作ろう！'
+      }
+    ]
+  }
 ];

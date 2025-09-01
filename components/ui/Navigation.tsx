@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useRouter, usePathname } from "next/navigation";
-import { useApp } from "@/context/AppContext";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter, usePathname } from 'next/navigation';
+import { useApp } from '@/context/AppContext';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,15 +12,13 @@ const Navigation = () => {
   const { state } = useApp();
 
   const menuItems = [
-    { path: "/home", label: "ホーム", icon: "🏠", description: "メインページ" },
-    { path: "/onboarding", label: "セットアップ", icon: "⚙️", description: "クローンの設定" },
-    { path: "/qa", label: "Q&A", icon: "❓", description: "質問に答える" },
-    { path: "/minigame", label: "ミニゲーム", icon: "🎮", description: "楽しく学習" },
-    { path: "/collaboration", label: "コラボ創作", icon: "🤝", description: "共同制作" },
-    { path: "/theme-works", label: "作品ギャラリー", icon: "🎨", description: "みんなの作品" },
-    { path: "/works", label: "マイ作品", icon: "📚", description: "あなたの作品" },
-    { path: "/chat", label: "チャット", icon: "💬", description: "作品について語り合う" },
-    { path: "/generate", label: "作品生成", icon: "✨", description: "新しい作品を作る" },
+    { path: '/home', label: 'ホーム', icon: '🏠', description: 'メインページ' },
+    { path: '/daily-quest', label: 'Aiconトレーニング', icon: '📋', description: 'Q&A・ミニゲームでポイント獲得' },
+    { path: '/collaboration', label: 'コラボ活動', icon: '🤝', description: 'テーマに沿ってAicon同士が創作' },
+    { path: '/my-collaborations', label: 'わたしのコラボ', icon: '📚', description: 'あなたのコラボ作品管理' },
+    { path: '/rankings', label: 'みんなのコラボ', icon: '🏆', description: 'ランキングとコメント' },
+    { path: '/notifications', label: '通知', icon: '🔔', description: 'チャットやコラボの通知', hasNotification: true },
+    { path: '/character-customization', label: 'Aiconカスタマイズ', icon: '⚙️', description: 'Aiconの外見と個性を設定' }
   ];
 
   const handleNavigation = (path: string) => {
@@ -29,10 +27,10 @@ const Navigation = () => {
   };
 
   const handleLogoClick = () => {
-    if (pathname === "/" || pathname === "/onboarding") {
-      router.push("/");
+    if (pathname === '/' || pathname === '/onboarding') {
+      router.push('/');
     } else {
-      router.push("/home");
+      router.push('/home');
     }
   };
 
@@ -72,7 +70,7 @@ const Navigation = () => {
               <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent">
                 Yoriai
               </h1>
-              <p className="text-xs text-gray-500 -mt-1">AI Clone Creator</p>
+              <p className="text-xs text-gray-500 -mt-1">Aicon Collaboration</p>
             </div>
           </motion.div>
 
@@ -88,7 +86,7 @@ const Navigation = () => {
                 className="w-5 h-0.5 bg-white rounded-full"
                 animate={{
                   rotate: isOpen ? 45 : 0,
-                  y: isOpen ? 6 : 0,
+                  y: isOpen ? 6 : 0
                 }}
                 transition={{ duration: 0.3 }}
               />
@@ -96,7 +94,7 @@ const Navigation = () => {
                 className="w-5 h-0.5 bg-white rounded-full mt-1"
                 animate={{
                   opacity: isOpen ? 0 : 1,
-                  x: isOpen ? -10 : 0,
+                  x: isOpen ? -10 : 0
                 }}
                 transition={{ duration: 0.3 }}
               />
@@ -104,7 +102,7 @@ const Navigation = () => {
                 className="w-5 h-0.5 bg-white rounded-full mt-1"
                 animate={{
                   rotate: isOpen ? -45 : 0,
-                  y: isOpen ? -6 : 0,
+                  y: isOpen ? -6 : 0
                 }}
                 transition={{ duration: 0.3 }}
               />
@@ -130,10 +128,10 @@ const Navigation = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: "100%" }}
+            initial={{ x: '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 120 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 120 }}
             className="fixed top-0 right-0 h-full w-80 z-50 bg-white/95 backdrop-blur-xl border-l border-gray-200/50 shadow-2xl"
           >
             {/* Header */}
@@ -144,10 +142,8 @@ const Navigation = () => {
                     <span className="text-white text-xl">👋</span>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-800">
-                      {state.user?.nickname || "ゲスト"}さん
-                    </h3>
-                    <p className="text-sm text-gray-500">クローン作成者</p>
+                    <h3 className="font-bold text-gray-800">{state.user?.nickname || 'ゲスト'}さん</h3>
+                    <p className="text-sm text-gray-500">Aicon作成者</p>
                   </div>
                 </div>
                 <motion.button
@@ -172,8 +168,8 @@ const Navigation = () => {
                       onClick={() => handleNavigation(item.path)}
                       className={`w-full p-4 rounded-2xl text-left transition-all duration-200 ${
                         isActive
-                          ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg"
-                          : "bg-gray-50 hover:bg-gray-100 text-gray-700"
+                          ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg'
+                          : 'bg-gray-50 hover:bg-gray-100 text-gray-700'
                       }`}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -185,7 +181,7 @@ const Navigation = () => {
                         <span className="text-2xl">{item.icon}</span>
                         <div className="flex-1">
                           <div className="font-medium">{item.label}</div>
-                          <div className={`text-xs ${isActive ? "text-white/80" : "text-gray-500"}`}>
+                          <div className={`text-xs ${isActive ? 'text-white/80' : 'text-gray-500'}`}>
                             {item.description}
                           </div>
                         </div>
@@ -196,6 +192,15 @@ const Navigation = () => {
                             transition={{ duration: 1, repeat: Infinity }}
                           />
                         )}
+                        {item.hasNotification && (
+                          <motion.div
+                            className="w-3 h-3 bg-red-500 rounded-full flex items-center justify-center"
+                            animate={{ scale: [1, 1.1, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          >
+                            <span className="text-xs text-white font-bold">3</span>
+                          </motion.div>
+                        )}
                       </div>
                     </motion.button>
                   );
@@ -205,23 +210,44 @@ const Navigation = () => {
 
             {/* Footer */}
             <div className="p-6 border-t border-gray-200/50">
-              <div className="text-center space-y-2">
-                <div className="text-sm text-gray-500">
-                  クローンレベル: {state.clone?.level || 1}
+              <div className="text-center space-y-3">
+                {/* Collaboration Points in Footer */}
+                <div className="p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-200">
+                  <div className="text-xs text-gray-500 mb-1">コラボポイント</div>
+                  <div className={`text-lg font-bold ${
+                    state.collaborationPoints > 5
+                      ? 'text-green-600'
+                      : state.collaborationPoints > 2
+                      ? 'text-yellow-600'
+                      : state.collaborationPoints > 0
+                      ? 'text-orange-600'
+                      : 'text-red-600'
+                  }`}>
+                    {state.collaborationPoints} pts
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    {state.collaborationPoints === 0 
+                      ? 'デイリークエストでポイント獲得'
+                      : `あと${state.collaborationPoints}回コラボ可能`
+                    }
+                  </div>
                 </div>
-                <div className="text-sm text-gray-500">
-                  経験値: {state.clone?.experience || 0}
-                </div>
-                <div className="flex justify-center space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <div
-                      key={i}
-                      className={`w-2 h-2 rounded-full ${
-                        i < (state.clone?.level || 1) ? "bg-yellow-400" : "bg-gray-300"
-                      }`}
-                    />
-                  ))}
-                </div>
+
+                {/* Logout Button */}
+                <motion.button
+                  onClick={() => {
+                    router.push('/');
+                    setIsOpen(false);
+                  }}
+                  className="w-full p-3 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 rounded-2xl border border-gray-300 hover:from-red-50 hover:to-red-100 hover:text-red-700 hover:border-red-300 transition-all duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-lg">🚪</span>
+                    <span className="font-medium">ログアウト</span>
+                  </div>
+                </motion.button>
               </div>
             </div>
           </motion.div>

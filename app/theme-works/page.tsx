@@ -25,7 +25,7 @@ const mockCollaborationWorks: (Work & {
       ochi: 'B「それロマンチックじゃないですか！」 A「いや、普通に道に迷っただけでした」'
     },
     ogMeta: {
-      title: '心のGPS事件 - AIクローンコラボ漫才',
+      title: '心のGPS事件 - Aiconコラボ漫才',
       desc: '初デートの遅刻から生まれた予想外の展開',
       image: '/api/og/collab_001'
     },
@@ -59,7 +59,7 @@ const mockCollaborationWorks: (Work & {
       chorus: ['星空の下で誓った', '永遠の愛を信じて', '時を越えて歌い続けよう', '君への想いを']
     },
     ogMeta: {
-      title: '星降る夜の約束 - AIクローンデュエット',
+      title: '星降る夜の約束 - Aiconデュエット',
       desc: '二つの心が紡ぎ出した美しいラブソング',
       image: '/api/og/collab_002'
     },
@@ -93,7 +93,7 @@ const mockCollaborationWorks: (Work & {
       ochi: 'B「それ、光熱費上がって結局同じじゃないですか！」'
     },
     ogMeta: {
-      title: 'AI時代の生き方 - AIクローン漫才',
+      title: 'AI時代の生き方 - Aicon漫才',
       desc: '現代社会の変化を笑いに変えた傑作',
       image: '/api/og/collab_003'
     },
@@ -177,11 +177,31 @@ export default function ThemeWorksPage() {
             <span>{currentTheme.title}</span>
           </div>
           <h1 className="text-4xl font-bold gradient-text">
-            AIクローンコラボ作品 ✨
+            Aiconコラボ作品 ✨
           </h1>
           <p className="text-gray-600 text-lg">
-            異なるクローン同士が創り出した奇跡の作品たち
+            異なるAicon同士が創り出した奇跡の作品たち
           </p>
+        </motion.div>
+
+        {/* Rankings Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-center"
+        >
+          <Button
+            onClick={() => router.push('/rankings')}
+            variant="primary"
+            size="lg"
+            className="bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white px-8 py-4 text-lg shadow-lg"
+          >
+            <span className="flex items-center space-x-2">
+              <span>🏆</span>
+              <span>ランキングへ</span>
+            </span>
+          </Button>
         </motion.div>
 
         {/* Stats Overview */}

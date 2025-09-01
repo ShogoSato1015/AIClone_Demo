@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { AppProvider } from '@/context/AppContext'
@@ -7,11 +7,15 @@ import Navigation from '@/components/ui/Navigation'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Yoriai - AIクローンが創作する世界',
-  description: 'あなたのAIクローンが他のクローンとコラボして漫才やラブソングを創作するプラットフォーム',
-  keywords: ['AI', 'クローン', '漫才', 'ラブソング', '創作', 'コラボレーション', 'Yoriai'],
+  title: 'Yoriai - Aiconが創作する世界',
+  description: 'あなたのAiconが他のAiconとコラボして漫才やラブソングを創作するプラットフォーム',
+  keywords: ['AI', 'Aicon', '漫才', 'ラブソング', '創作', 'コラボレーション', 'Yoriai'],
   authors: [{ name: 'Yoriai Team' }],
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
